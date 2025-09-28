@@ -4,3 +4,4 @@ dotenv
 langchain_community
 chromadb
 pandas
+bs4
