@@ -6,10 +6,11 @@ from langchain_core.exceptions import OutputParserException
 from dotenv import load_dotenv
 
 load_dotenv()
+api_key = os.environ.get("GROQ_API_KEY")
 
 class Chain:
     def __init__(self):
-        self.llm = ChatGroq(temperature=0, groq_api_key=os.environ.get("GROQ_API_KEY"), model_name="llama-3.1-8b-instant")
+        self.llm = ChatGroq(temperature=0, groq_api_key=api_key, model_name="llama-3.1-8b-instant")
 
     def extract_jobs(self, cleaned_text):
         prompt_extract = PromptTemplate.from_template(
